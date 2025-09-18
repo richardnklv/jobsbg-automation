@@ -1,0 +1,27 @@
+{
+  "assistant": {
+    "enabled": true,
+    "default_model": {
+      "provider": "openrouter",
+      "model": "moonshotai/kimi-k2:free"
+    },
+    "version": "2"
+  },
+  "language_models": {
+    "openrouter": {
+      "version": "1",
+      "api_url": "https://openrouter.ai/api/v1",
+      "api_key": "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",
+      "available_models": [
+        "moonshotai/kimi-k2:free",
+        "moonshotai/v1-8k",
+        "anthropic/claude-3.5-sonnet",
+        "google/gemini-pro",
+        "openai/gpt-4"
+      ]
+    }
+  },
+  "maxAgentSteps": 25,
+  "startupProcesses": [],
+  "fileChangeHooks": []
+}
