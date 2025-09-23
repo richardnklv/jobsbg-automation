@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { createClient } from '@supabase/supabase-js';
 import { LoginDto } from '../api/auth.dto';
 
@@ -9,9 +10,11 @@ export class LoginService {
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
   );
 
+  constructor(private readonly jwtService: JwtService) {}
+
   async login(loginDto: LoginDto) {
     const { email, password } = loginDto;
-    
+
     // First find candidate by email
     const { data: candidate, error: candidateError } = await this.supabase
       .from('candidate')
@@ -31,14 +34,22 @@ export class LoginService {
     }
 
     // Verify password by attempting signin (this validates the password)
-    const { error: passwordError } = await this.supabase.auth.signInWithPassword({
+    const { data: signInData, error: passwordError } = await this.supabase.auth.signInWithPassword({
       email,
       password,
     });
 
-    if (passwordError) {
+    if (passwordError || !signInData.session) {
       throw new Error('Invalid password');
     }
+
+    // Generate our own JWT token with candidate info
+    const payload = {
+      sub: candidate.auth_user_id,
+      email: candidate.email,
+      candidateId: candidate.id,
+    };
+    const token = this.jwtService.sign(payload);
 
     return {
       user: {
@@ -47,6 +58,7 @@ export class LoginService {
         first_name: candidate.first_name,
         last_name: candidate.last_name,
       },
+      access_token: token,
     };
   }
 }

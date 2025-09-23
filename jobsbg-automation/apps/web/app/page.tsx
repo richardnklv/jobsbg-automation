@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useAppRouter } from '../services/router';
 import { loginUser } from '../services/auth/login';
 import { registerUser } from '../services/auth/register';
 
 export default function AuthPage() {
+  const { navigate } = useAppRouter();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,7 +20,7 @@ export default function AuthPage() {
       const result = await loginUser(email, password);
       console.log('Login successful:', result);
       alert('Login successful!');
-      // TODO: Redirect to dashboard or save user data
+      navigate.upload(); // Redirect to upload page
     } catch (error) {
       console.error('Login error:', error);
       alert('Login failed. Please try again.');
@@ -33,7 +35,7 @@ export default function AuthPage() {
       const result = await registerUser(email, password, firstName, lastName);
       console.log('Registration successful:', result);
       alert('Registration successful!');
-      // TODO: Redirect to dashboard or save user data
+      navigate.upload(); // Redirect to upload page
     } catch (error) {
       console.error('Register error:', error);
       alert('Registration failed. Please try again.');

@@ -12,6 +12,7 @@ export class LoginController {
     return {
       message: 'Login successful',
       user: result.user,
+      access_token: result.access_token,
     };
   }
 }
