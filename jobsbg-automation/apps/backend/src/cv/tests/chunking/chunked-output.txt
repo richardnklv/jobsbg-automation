@@ -1,0 +1,158 @@
+=== COARSE GRANULARITY CHUNKS ===
+
+--- COARSE CHUNK 1 ---
+Richard Nikolov
++359 89 27 64 390 | richardnklv@outlook.com
+https://portfolio-git-main-richardnklvs-projects.vercel.app/
+VueJS, Python, TypeScript, Tailwind, Javascript, Ionic, PHP, Laravel, SQL, React, Flutter,
+Automations, Discord API, LLM API’s, Leveraging AI, API’s...... Can learn anything quickly
+Technical computer science
+sep 2022 - july 2023
+Education
+Business information technology
+sep 2023 - july 2024
+Mathematics
+sep 2015 - july 2022
+- Been to national, sometimes international math competitions and olympiads. Sometimes ranked for a medal, something not. University of Twente, Enschede, the Netherlands
+High School of Mathematics and Natural Sciences,
+Burgas, Bulgaria
+University of Twente, Enschede, the Netherlands
+English C2 Certificate
+- Cambridge Advanced English C2
+Software Engineer
+march 2024 - jan 2025
+Work Experience
+Fully built and deployed an app handling traffic using VueJS, Typescript, Ionic.
+
+--- COARSE CHUNK 2 ---
+Backend systems of ecommerce sites using PHP, Laravel, Magento. Real-World Solutions Developer
+may 2024 - present
+The above + Created automation tools for local businesses (Python, AI/LLM APIs). Deployed chatbots (Dental Clinic, Email Automation) with knowledge bases. ( Additional ) 
+Crypto Bot Mobile App: Flutter-based wrapper for trading automation. AI-Powered Design: Print-on-demand store with generative image workflows. Epartment, Hengelo
+( scroll slowly & Desktop only ) (outdated, but still must see)
+Software Engineer | Real-World Solutions
+Discord Bot (JavaScript) Scaled to 600+ DAU, managed $50K+ payouts/month for music labels.
+
+--- COARSE CHUNK 3 ---
+Agency Platform (VueJS/Ionic) Serves 50+ eCommerce agencies with deployment management. AI Invoice Processor (Python) Automates workflows for accountants, integrated with business APIs. Dental Clinic System (VueJS/Python) Full-stack booking platform with admin/client UI and chatbots. (and many more...)
+Technical Skills
+Solutions & Live deployment
+AI Software Developer
+jan 2025 - june 2025
+AI automations, automation scripts, sites, connecting client databases, etc. Client work, thinking and building entire automation solutions, n8n, javascript, API's, etc. Inoworks, Enschede
+Freelance dev
+now and then
+Bots, scripts, API's, talking with communities, clients, mainly automations, just for fun.
+
+=== MEDIUM GRANULARITY CHUNKS ===
+
+--- MEDIUM CHUNK 1 ---
+Richard Nikolov
++359 89 27 64 390 | richardnklv@outlook.com
+https://portfolio-git-main-richardnklvs-projects.vercel.app/
+VueJS, Python, TypeScript, Tailwind, Javascript, Ionic, PHP, Laravel, SQL, React, Flutter,
+Automations, Discord API, LLM API’s, Leveraging AI, API’s...... Can learn anything quickly
+Technical computer science
+sep 2022 - july 2023
+Education
+Business information technology
+sep 2023 - july 2024
+Mathematics
+sep 2015 - july 2022
+- Been to national, sometimes international math competitions and olympiads.
+
+--- MEDIUM CHUNK 2 ---
+Sometimes ranked for a medal, something not. University of Twente, Enschede, the Netherlands
+High School of Mathematics and Natural Sciences,
+Burgas, Bulgaria
+University of Twente, Enschede, the Netherlands
+English C2 Certificate
+- Cambridge Advanced English C2
+Software Engineer
+march 2024 - jan 2025
+Work Experience
+Fully built and deployed an app handling traffic using VueJS, Typescript, Ionic. Backend systems of ecommerce sites using PHP, Laravel, Magento.
+
+--- MEDIUM CHUNK 3 ---
+Real-World Solutions Developer
+may 2024 - present
+The above + Created automation tools for local businesses (Python, AI/LLM APIs). Deployed chatbots (Dental Clinic, Email Automation) with knowledge bases. ( Additional ) 
+Crypto Bot Mobile App: Flutter-based wrapper for trading automation. AI-Powered Design: Print-on-demand store with generative image workflows. Epartment, Hengelo
+( scroll slowly & Desktop only ) (outdated, but still must see)
+Software Engineer | Real-World Solutions
+Discord Bot (JavaScript) Scaled to 600+ DAU, managed $50K+ payouts/month for music labels.
+
+--- MEDIUM CHUNK 4 ---
+Agency Platform (VueJS/Ionic) Serves 50+ eCommerce agencies with deployment management. AI Invoice Processor (Python) Automates workflows for accountants, integrated with business APIs. Dental Clinic System (VueJS/Python) Full-stack booking platform with admin/client UI and chatbots. (and many more...)
+Technical Skills
+Solutions & Live deployment
+AI Software Developer
+jan 2025 - june 2025
+AI automations, automation scripts, sites, connecting client databases, etc.
+
+Client work, thinking and building entire automation solutions, n8n, javascript, API's, etc. Inoworks, Enschede
+Freelance dev
+now and then
+Bots, scripts, API's, talking with communities, clients, mainly automations, just for fun.
+
+=== FINE GRANULARITY CHUNKS ===
+
+--- FINE CHUNK 1 ---
+Richard Nikolov
++359 89 27 64 390 | richardnklv@outlook.com
+https://portfolio-git-main-richardnklvs-projects.vercel.app/
+VueJS, Python, TypeScript, Tailwind, Javascript, Ionic, PHP, Laravel, SQL, React, Flutter,
+Automations, Discord API, LLM API’s, Leveraging AI, API’s......
+
+--- FINE CHUNK 2 ---
+Can learn anything quickly
+Technical computer science
+sep 2022 - july 2023
+Education
+Business information technology
+sep 2023 - july 2024
+Mathematics
+sep 2015 - july 2022
+- Been to national, sometimes international math competitions and olympiads.
+
+--- FINE CHUNK 3 ---
+Sometimes ranked for a medal, something not. University of Twente, Enschede, the Netherlands
+High School of Mathematics and Natural Sciences,
+Burgas, Bulgaria
+University of Twente, Enschede, the Netherlands
+English C2 Certificate
+- Cambridge Advanced English C2
+Software Engineer
+march 2024 - jan 2025
+Work Experience
+Fully built and deployed an app handling traffic using VueJS, Typescript, Ionic.
+
+--- FINE CHUNK 4 ---
+Backend systems of ecommerce sites using PHP, Laravel, Magento. Real-World Solutions Developer
+may 2024 - present
+The above + Created automation tools for local businesses (Python, AI/LLM APIs). Deployed chatbots (Dental Clinic, Email Automation) with knowledge bases.
+
+--- FINE CHUNK 5 ---
+( Additional ) 
+Crypto Bot Mobile App: Flutter-based wrapper for trading automation. AI-Powered Design: Print-on-demand store with generative image workflows. Epartment, Hengelo
+( scroll slowly & Desktop only ) (outdated, but still must see)
+Software Engineer | Real-World Solutions
+Discord Bot (JavaScript) Scaled to 600+ DAU, managed $50K+ payouts/month for music labels.
+
+--- FINE CHUNK 6 ---
+Agency Platform (VueJS/Ionic) Serves 50+ eCommerce agencies with deployment management. AI Invoice Processor (Python) Automates workflows for accountants, integrated with business APIs. Dental Clinic System (VueJS/Python) Full-stack booking platform with admin/client UI and chatbots.
+
+--- FINE CHUNK 7 ---
+(and many more...)
+Technical Skills
+Solutions & Live deployment
+AI Software Developer
+jan 2025 - june 2025
+AI automations, automation scripts, sites, connecting client databases, etc. Client work, thinking and building entire automation solutions, n8n, javascript, API's, etc.
+
+--- FINE CHUNK 8 ---
+Inoworks, Enschede
+Freelance dev
+now and then
+Bots, scripts, API's, talking with communities, clients, mainly automations, just for fun.
+

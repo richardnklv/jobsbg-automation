@@ -1,0 +1,14 @@
+Vectorization Test Summary
+=========================
+Coarse chunks: 3
+Coarse vectors: 3 vectors, 384 dimensions each
+
+Medium chunks: 4
+Medium vectors: 4 vectors, 384 dimensions each
+
+Fine chunks: 8
+Fine vectors: 8 vectors, 384 dimensions each
+
+Sample coarse vector (first 5 values): -0.0958913043141365, -0.04104595258831978, 0.012538902461528778, -0.0787862241268158, -0.005384421907365322
+Sample medium vector (first 5 values): -0.08489184081554413, -0.05081356689333916, -0.02197735570371151, -0.04333799332380295, 0.00916559062898159
+Sample fine vector (first 5 values): -0.1017213836312294, -0.049234550446271896, -0.06774173676967621, -0.00002254729224659968, -0.00809792336076498
