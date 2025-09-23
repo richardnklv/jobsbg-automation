@@ -23,17 +23,30 @@ export class CvService {
   ) {}
 
   async processCvUpload(file: Express.Multer.File, candidateId: string) {
+    // Step 0: Ensure candidate exists (lookup by auth_user_id which comes from Supabase)
+    const { data: candidate, error: candidateError } = await this.supabase
+      .from('candidate')
+      .select('id')
+      .eq('auth_user_id', candidateId)
+      .single();
+
+    if (candidateError || !candidate) {
+      throw new Error('Candidate not found');
+    }
+
+    const dbCandidateId = candidate.id; // real UUID primary key in candidate table
+
     // Step 1: Validate file
     this.validateFile(file);
 
-    // Step 2: Upload to storage
-    const fileUrl = await this.uploadFileToStorage(file, candidateId);
+    // Step 2: Upload to storage (use DB candidate id for filenames)
+    const fileUrl = await this.uploadFileToStorage(file, dbCandidateId);
 
     // Step 3: Process vectors
     const vectors = await this.cvProcessingService.processCV(file.buffer);
 
     // Step 4: Save to database (transaction for consistency)
-    return this.saveCvWithVectors(candidateId, fileUrl, vectors);
+    return this.saveCvWithVectors(dbCandidateId, fileUrl, vectors);
   }
 
   private validateFile(file: Express.Multer.File) {

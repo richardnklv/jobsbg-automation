@@ -7,42 +7,24 @@ import { createClient } from '@supabase/supabase-js';
 export class JwtStrategy extends PassportStrategy(Strategy) {
   private supabase = createClient(
     process.env.SUPABASE_URL!,
-    process.env.SUPABASE_ANON_KEY!, // Use anon key for token verification
+    process.env.SUPABASE_SERVICE_ROLE_KEY!, // Use service role key for database queries
   );
 
   constructor() {
+    console.log('JWT Strategy - Constructor called, secret:', process.env.SUPABASE_JWT_SECRET ? 'SET' : 'NOT SET');
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: process.env.SUPABASE_JWT_SECRET || 'your-jwt-secret', // Supabase JWT secret
+      secretOrKey: process.env.SUPABASE_JWT_SECRET
     });
   }
-
+  // Minimal validation: trust the verified token payload and return it as the user object
   async validate(payload: any) {
-    // Verify the token with Supabase
-    const { data: { user }, error } = await this.supabase.auth.getUser(payload.sub);
-
-    if (error || !user) {
-      throw new Error('Invalid token');
-    }
-
-    // Get candidate info
-    const { data: candidate, error: candidateError } = await this.supabase
-      .from('candidate')
-      .select('id, email, first_name, last_name')
-      .eq('auth_user_id', user.id)
-      .single();
-
-    if (candidateError || !candidate) {
-      throw new Error('Candidate not found');
-    }
-
+    // Keep this minimal to avoid DB/service dependencies during token validation
     return {
-      id: candidate.id,
-      email: candidate.email,
-      first_name: candidate.first_name,
-      last_name: candidate.last_name,
-      auth_user_id: user.id,
+      auth_user_id: payload.sub,
+      email: payload.email,
+      candidateId: payload.candidateId,
     };
   }
 }

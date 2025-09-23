@@ -13,10 +13,10 @@ import { CvModule } from './cv/cv.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.SUPABASE_DB_HOST || 'db.mdvphyumudwpnvnhlsqa.supabase.co',
+      host: process.env.SUPABASE_DB_HOST || 'aws-1-eu-central-1.pooler.supabase.com',
       port: process.env.SUPABASE_DB_PORT ? parseInt(process.env.SUPABASE_DB_PORT) : 5432,
-      username: process.env.SUPABASE_DB_USERNAME || 'postgres',
-      password: process.env.SUPABASE_DB_PASSWORD || '',
+      username: process.env.SUPABASE_DB_USERNAME || 'postgres.mdvphyumudwpnvnhlsqa',
+      password: process.env.SUPABASE_DB_PASSWORD || 'vhrPAvNVuLTUFNCF',
       database: process.env.SUPABASE_DB_NAME || 'postgres',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true, // Set to false in production

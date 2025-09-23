@@ -1,4 +1,5 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get, UseGuards, Request } from '@nestjs/common';
+import { SupabaseAuthGuard } from '../guards/supabase-auth.guard';
 import { LoginService } from '../services/login.service';
 import { LoginDto } from './auth.dto';
 
@@ -14,5 +15,11 @@ export class LoginController {
       user: result.user,
       access_token: result.access_token,
     };
+  }
+
+  @Get('whoami')
+  @UseGuards(SupabaseAuthGuard)
+  async whoami(@Request() req: any) {
+    return { user: req.user };
   }
 }

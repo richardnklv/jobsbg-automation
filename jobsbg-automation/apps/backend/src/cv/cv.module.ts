@@ -8,10 +8,12 @@ import { CVProcessingService } from './functions/cv-processing.service';
 import { PdfNormalizationService } from './functions/pdf-normalization.service';
 import { CVChunkingService } from './functions/chunking.service';
 import { VectorizationService } from './functions/vectorization.service';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([CV, CVVector]),
+    AuthModule,
   ],
   controllers: [CvController],
   providers: [

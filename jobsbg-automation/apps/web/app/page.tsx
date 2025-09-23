@@ -19,6 +19,12 @@ export default function AuthPage() {
     try {
       const result = await loginUser(email, password);
       console.log('Login successful:', result);
+
+      // Store the JWT token
+      if (result.access_token) {
+        localStorage.setItem('auth_token', result.access_token);
+      }
+
       alert('Login successful!');
       navigate.upload(); // Redirect to upload page
     } catch (error) {
@@ -34,8 +40,9 @@ export default function AuthPage() {
     try {
       const result = await registerUser(email, password, firstName, lastName);
       console.log('Registration successful:', result);
-      alert('Registration successful!');
-      navigate.upload(); // Redirect to upload page
+
+      alert('Registration successful! Please log in to continue.');
+      // Stay on login page after registration
     } catch (error) {
       console.error('Register error:', error);
       alert('Registration failed. Please try again.');
@@ -52,13 +59,14 @@ export default function AuthPage() {
           <p className="text-gray-600 mt-2">Find your perfect job match</p>
         </div>
         
-        <div className="space-y-6">
+        <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
           <div>
             <input
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -69,6 +77,7 @@ export default function AuthPage() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -81,6 +90,7 @@ export default function AuthPage() {
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  autoComplete="given-name"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
@@ -91,6 +101,7 @@ export default function AuthPage() {
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
+                  autoComplete="family-name"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
@@ -114,7 +125,7 @@ export default function AuthPage() {
               {loading ? 'Please wait...' : 'Register'}
             </button>
           </div>
-        </div>
+        </form>
         
         <div className="text-center mt-6">
           <button
