@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { CvModule } from './cv/cv.module';
+import { JobPostModule } from './job-post/job-post.module';
 
 @Module({
   imports: [
@@ -22,8 +23,9 @@ import { CvModule } from './cv/cv.module';
       synchronize: true, // Set to false in production
       ssl: { rejectUnauthorized: false }, // Required for Supabase
     }),
-    AuthModule,
-    CvModule,
+  AuthModule,
+  CvModule,
+  JobPostModule,
   ],
   controllers: [AppController],
   providers: [AppService],
