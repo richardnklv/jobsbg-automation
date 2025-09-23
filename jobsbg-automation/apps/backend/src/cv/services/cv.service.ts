@@ -5,7 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 import { CV } from '../entities/cv.entity';
 import { CVVector } from '../entities/cv_vectors.entity';
 import { CVProcessingService } from '../functions/cv-processing.service';
-import { VectorizedCV } from '../functions/vectorization.service';
+import { VectorizedCV } from '../../shared/functions/vectorization.service';
 
 @Injectable()
 export class CvService {

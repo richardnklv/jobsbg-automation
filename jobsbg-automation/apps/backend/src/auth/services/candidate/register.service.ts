@@ -1,6 +1,6 @@
 import { Injectable, ConflictException } from '@nestjs/common';
 import { createClient } from '@supabase/supabase-js';
-import { RegisterDto } from '../api/auth.dto';
+import { RegisterDto } from '../../api/auth.dto';
 
 @Injectable()
 export class RegisterService {

@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 // Passport is no longer used; SupabaseAuthGuard handles authentication.
-import { RegisterController } from './api/register.controller';
-import { LoginController } from './api/login.controller';
-import { RegisterService } from './services/register.service';
-import { LoginService } from './services/login.service';
+import { RegisterController } from './api/candidate/register.controller';
+import { LoginController } from './api/candidate/login.controller';
+import { RegisterService } from './services/candidate/register.service';
+import { LoginService } from './services/candidate/login.service';
 import { SupabaseAuthGuard } from './guards/supabase-auth.guard';
 
 @Module({

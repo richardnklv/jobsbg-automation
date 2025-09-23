@@ -6,8 +6,8 @@ import { CV } from './entities/cv.entity';
 import { CVVector } from './entities/cv_vectors.entity';
 import { CVProcessingService } from './functions/cv-processing.service';
 import { PdfNormalizationService } from './functions/pdf-normalization.service';
-import { CVChunkingService } from './functions/chunking.service';
-import { VectorizationService } from './functions/vectorization.service';
+import { CVChunkingService } from '../shared/functions/chunking.service';
+import { VectorizationService } from '../shared/functions/vectorization.service';
 import { AuthModule } from '../auth/auth.module';
 
 @Module({

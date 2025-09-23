@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { generateEmbedding } from '../../shared/utils/embedding.util';
+import { generateEmbedding } from '../utils/embedding.util';
 
 export interface ChunkedCV {
   coarse: string[];

@@ -1,4 +1,4 @@
-import { CVChunkingService } from '../../functions/chunking.service';
+import { CVChunkingService } from '../../../shared/functions/chunking.service';
 import * as fs from 'fs';
 import * as path from 'path';
 

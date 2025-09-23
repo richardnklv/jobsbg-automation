@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PdfNormalizationService } from './pdf-normalization.service';
-import { CVChunkingService } from './chunking.service';
-import { VectorizationService, VectorizedCV } from './vectorization.service';
+import { CVChunkingService } from '../../shared/functions/chunking.service';
+import { VectorizationService, VectorizedCV } from '../../shared/functions/vectorization.service';
 
 @Injectable()
 export class CVProcessingService {

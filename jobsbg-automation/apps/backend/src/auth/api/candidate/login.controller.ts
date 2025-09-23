@@ -1,7 +1,7 @@
 import { Body, Controller, Post, Get, UseGuards, Request } from '@nestjs/common';
-import { SupabaseAuthGuard } from '../guards/supabase-auth.guard';
-import { LoginService } from '../services/login.service';
-import { LoginDto } from './auth.dto';
+import { SupabaseAuthGuard } from '../../guards/supabase-auth.guard';
+import { LoginService } from '../../services/candidate/login.service';
+import { LoginDto } from '../auth.dto';
 
 @Controller('auth')
 export class LoginController {
