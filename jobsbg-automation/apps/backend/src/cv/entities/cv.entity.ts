@@ -14,6 +14,6 @@ export class CV {
   @Column('text')
   education: string;
 
-  @Column('vector', { length: 1536 })
-  embedding: number[];
+  @Column('text', { nullable: true })
+  embedding: string; // Store as JSON string for now
 }
