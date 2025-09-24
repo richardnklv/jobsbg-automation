@@ -10,6 +10,7 @@ export type JobPostListItem = {
   created_at?: string | Date;
   recruiter_name?: string;
   company?: string;
+  best_similarity?: number;
 };
 
 export type JobPostListProps = {

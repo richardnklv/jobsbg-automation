@@ -1,20 +1,24 @@
 {
   "pages": {
-    "/page": [
+    "/(applicant)/upload/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
+      "static/chunks/app/(applicant)/upload/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
-    "/(applicant)/upload/page": [
+    "/(applicant)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(applicant)/upload/page.js"
+      "static/chunks/app/(applicant)/layout.js"
+    ],
+    "/(applicant)/job_list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(applicant)/job_list/page.js"
     ]
   }
 }

@@ -10,6 +10,7 @@ type JobPostProps = {
   created_at?: string | Date;
   recruiter_name?: string;
   company?: string;
+  best_similarity?: number;
   className?: string;
 };
 
@@ -21,6 +22,7 @@ export default function JobPost({
   created_at,
   recruiter_name = 'Acme Recruiting',
   company = 'Acme Corp',
+  best_similarity,
   className = '',
 }: JobPostProps) {
   const created = created_at ? new Date(created_at).toLocaleDateString() : '';
@@ -57,7 +59,14 @@ export default function JobPost({
           <span style={{ fontWeight: 600, fontSize: 16, opacity: 0.92 }}>{company}</span>
           <span style={{ fontSize: 15, opacity: 0.85 }}>{recruiter_name}</span>
         </div>
-        <div style={{ fontSize: 15, opacity: 0.85, textAlign: 'right', minWidth: 80 }}>{created}</div>
+        <div style={{ fontSize: 15, opacity: 0.85, textAlign: 'right', minWidth: 80 }}>
+          {created}
+          {best_similarity !== undefined && (
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#39FF14', marginTop: 4 }}>
+              Match Score: {best_similarity.toFixed(2)}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Description row */}

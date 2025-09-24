@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { CvModule } from './cv/cv.module';
 import { JobPostModule } from './job-post/job-post.module';
+import { MatchingModule } from './matching/matching.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { JobPostModule } from './job-post/job-post.module';
   AuthModule,
   CvModule,
   JobPostModule,
+  MatchingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

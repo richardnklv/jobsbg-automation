@@ -7,11 +7,12 @@ import { JobPost } from './entities/job_post.entity';
 import { JobPostVector } from './entities/job_post_vectors.entity';
 import { JobPostService } from './services/job_post.service';
 import { JobPostController } from './api/job_post.controller';
+import { FetchJobPostController } from './api/fetch_job_post.controller';
 import { AuthModule } from '../auth/auth.module';
 
 @Module({
 	imports: [TypeOrmModule.forFeature([JobPost, JobPostVector]), AuthModule],
-	controllers: [JobPostController],
+	controllers: [JobPostController, FetchJobPostController],
 	providers: [
 		JobPostService,
 		JobPostProcessingService,

@@ -1,13 +1,35 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useJobMatching } from '../layout';
 import { uploadCV } from '../../../services/applicant/cv_upload';
+import { fetchTopJobMatches } from '../../../services/applicant/job_match';
 
 export default function UploadCV() {
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [uploadResult, setUploadResult] = useState<any>(null);
   const [error, setError] = useState<string>('');
+  const [matching, setMatching] = useState(false);
+  const router = useRouter();
+  const { setJobs } = useJobMatching();
+  const handleMatchJobs = async () => {
+    setMatching(true);
+    try {
+      const result = await fetchTopJobMatches();
+      if (result && Array.isArray(result.jobs)) {
+        setJobs(result.jobs);
+        router.push('/job_list');
+      } else {
+        setError('Unexpected API response format.');
+      }
+    } catch (error) {
+      setError('Failed to fetch job matches.');
+    } finally {
+      setMatching(false);
+    }
+  };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -191,20 +213,44 @@ export default function UploadCV() {
           </div>
         )}
 
-        {uploadResult && (
-          <div style={{
-            color: '#39FF14',
-            fontSize: '12px',
-            padding: '12px',
-            background: '#0a1a0a',
-            borderRadius: '4px',
-            border: '1px solid #224422',
-          }}>
-            <div style={{ marginBottom: '4px' }}>SUCCESS: Upload completed</div>
-            <div style={{ opacity: 0.7 }}>CV_ID: {uploadResult.cv?.id}</div>
-            <div style={{ opacity: 0.7 }}>STATUS: {uploadResult.message}</div>
-          </div>
+  {uploadResult && (
+          <>
+            <div style={{
+              color: '#39FF14',
+              fontSize: '12px',
+              padding: '12px',
+              background: '#0a1a0a',
+              borderRadius: '4px',
+              border: '1px solid #224422',
+              marginBottom: '16px',
+            }}>
+              <div style={{ marginBottom: '4px' }}>SUCCESS: Upload completed</div>
+              <div style={{ opacity: 0.7 }}>CV_ID: {uploadResult.cv?.id}</div>
+              <div style={{ opacity: 0.7 }}>STATUS: {uploadResult.message}</div>
+            </div>
+            <button
+              onClick={handleMatchJobs}
+              disabled={matching}
+              style={{
+                width: '100%',
+                padding: '12px',
+                background: matching ? '#222' : '#39FF14',
+                color: matching ? '#888' : '#000',
+                border: 'none',
+                borderRadius: '4px',
+                fontWeight: 700,
+                fontSize: '16px',
+                cursor: matching ? 'not-allowed' : 'pointer',
+                marginTop: '8px',
+                transition: 'background 0.2s',
+              }}
+            >
+              {matching ? 'Matching...' : 'Match with Jobs'}
+            </button>
+          </>
         )}
+
+
       </div>
 
       <style jsx>{`
